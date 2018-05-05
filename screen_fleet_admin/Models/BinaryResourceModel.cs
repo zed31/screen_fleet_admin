@@ -2,9 +2,9 @@
 
 namespace screen_fleet_admin.Models
 {
-    public class ImageResourceModel : ResourceModel
+    public class BinaryResourceModel : ResourceModel
     {
         [BsonElement("Image data")]
-        byte[] Image { get; set; }
+        public byte[] Image { get; set; }
     }
 }
