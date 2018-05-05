@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using screen_fleet_admin.Contexts;
+using screen_fleet_admin.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace screen_fleet_admin.Models
+namespace screen_fleet_admin.Repositories
 {
     public class TVRepository : ITVRepository
     {

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using screen_fleet_admin.Models;
 
-namespace screen_fleet_admin.Models
+namespace screen_fleet_admin.Repositories
 {
     public interface ITVRepository
     {

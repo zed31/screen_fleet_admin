@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace screen_fleet_admin.Models
+namespace screen_fleet_admin.Contexts
 {
     public class MongoContext<Model>
     {

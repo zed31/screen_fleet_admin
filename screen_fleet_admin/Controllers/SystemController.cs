@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using screen_fleet_admin.Models;
+using screen_fleet_admin.Repositories;
 using System;
 
 namespace screen_fleet_admin.Controllers
