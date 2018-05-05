@@ -20,21 +20,21 @@ namespace screen_fleet_admin.Controllers
         [HttpPost]
         public string Post()
         {
-            _tvRepository.AddTVScreen(new TVModels()
+            _tvRepository.AddTVScreen(new TVModel()
             {
                 Name = "First tv",
                 Ip = "192.168.1.1",
                 InsertionDate = DateTime.Now,
                 UpdateTime = DateTime.Now
             });
-            _tvRepository.AddTVScreen(new TVModels()
+            _tvRepository.AddTVScreen(new TVModel()
             {
                 Name = "Second tv",
                 Ip = "192.168.1.2",
                 InsertionDate = DateTime.Now,
                 UpdateTime = DateTime.Now
             });
-            _tvRepository.AddTVScreen(new TVModels()
+            _tvRepository.AddTVScreen(new TVModel()
             {
                 Name = "Third tv",
                 Ip = "192.168.1.3",

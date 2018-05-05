@@ -18,13 +18,13 @@ namespace screen_fleet_admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<TVModels>> Get()
+        public async Task<IEnumerable<TVModel>> Get()
         {
             return await _tvRepository.GetAllTVScreens();
         }
 
         [HttpGet("{name}")]
-        public async Task<TVModels> Get(string name)
+        public async Task<DbModelBase> Get(string name)
         {
             return await _tvRepository.GetTVScreen(name);
         }

@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace screen_fleet_admin.Models
 {
-    public class TVModels : DbModelBase
+    public class TVModel : DbModelBase
     {
         [BsonElement("Ip address")]
         public string Ip { get; set; }

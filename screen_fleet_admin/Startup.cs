@@ -29,8 +29,10 @@ namespace screen_fleet_admin
             });
             services.AddTransient<ITVRepository, TVRepository>();
             services.AddTransient<MongoClientContext, MongoClientContext>();
-            services.AddTransient<MongoContext<TVModels>, MongoContext<TVModels>>();
+            services.AddTransient<MongoContext<TVModel>, MongoContext<TVModel>>();
+            services.AddTransient<MongoContext<DbModelBase>, MongoContext<DbModelBase>>();
             services.AddTransient<MongoContext<CompositionModel>, MongoContext<CompositionModel>>();
+            services.AddTransient<MongoContext<ResourceModel>, MongoContext<ResourceModel>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
