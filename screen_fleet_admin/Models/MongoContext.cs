@@ -3,24 +3,20 @@ using MongoDB.Driver;
 
 namespace screen_fleet_admin.Models
 {
-    public class MongoContext
+    public class MongoContext<Model>
     {
         private readonly IMongoDatabase _database = null;
 
-        public MongoContext(IOptions<Settings> settings)
+        public MongoContext(MongoClientContext databaseContext)
         {
-            var client = new MongoClient(settings.Value.ConnectionString);
-            if (client != null)
-            {
-                _database = client.GetDatabase(settings.Value.Database);
-            }
+            _database = databaseContext.Database;
         }
 
-        public IMongoCollection<TVModels> TVModels
+        public IMongoCollection<Model> Collection
         {
             get
             {
-                return _database.GetCollection<TVModels>("TVModels");
+                return _database.GetCollection<Model>("TVModels");
             }
         }
     }

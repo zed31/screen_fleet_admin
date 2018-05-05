@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace screen_fleet_admin.Models
 {
-    public interface IRepository
+    public interface ITVRepository
     {
         Task<IEnumerable<TVModels>> GetAllTVScreens();
         Task<TVModels> GetTVScreen(string name);

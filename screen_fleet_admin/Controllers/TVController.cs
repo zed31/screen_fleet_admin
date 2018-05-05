@@ -9,9 +9,9 @@ namespace screen_fleet_admin.Controllers
     [Route("api/[controller]")]
     public class TVController : Controller
     {
-        private readonly IRepository _tvRepository = null;
+        private readonly ITVRepository _tvRepository = null;
 
-        public TVController(IRepository tvRepository)
+        public TVController(ITVRepository tvRepository)
         {
             _tvRepository = tvRepository;
         }
