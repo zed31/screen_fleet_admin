@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenFleetAdmin", "ScreenFleetAdmin\ScreenFleetAdmin.csproj", "{F33D3DAA-461A-4605-A30D-28E16A2DB1BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "screen_fleet_admin", "screen_fleet_admin\screen_fleet_admin.csproj", "{2A5F03C9-6A30-435F-BE25-49A281E09B1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F33D3DAA-461A-4605-A30D-28E16A2DB1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F33D3DAA-461A-4605-A30D-28E16A2DB1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F33D3DAA-461A-4605-A30D-28E16A2DB1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F33D3DAA-461A-4605-A30D-28E16A2DB1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5F03C9-6A30-435F-BE25-49A281E09B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5F03C9-6A30-435F-BE25-49A281E09B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5F03C9-6A30-435F-BE25-49A281E09B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5F03C9-6A30-435F-BE25-49A281E09B1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8BD24675-DBC2-4161-822F-539DCCC33857}
+		SolutionGuid = {EC6D1D07-BE18-4BD1-A6E5-1057E4A5E6F2}
 	EndGlobalSection
 EndGlobal

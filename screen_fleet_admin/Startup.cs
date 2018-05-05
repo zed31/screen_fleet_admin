@@ -8,8 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using screen_fleet_admin.Models;
 
-namespace ScreenFleetAdmin
+namespace screen_fleet_admin
 {
     public class Startup
     {
@@ -24,6 +25,13 @@ namespace ScreenFleetAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<Settings>(options =>
+            {
+                options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+                options.Collection = Configuration.GetSection("MongoConnection:Collection").Value;
+            });
+            services.AddTransient<IRepository, TVRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
