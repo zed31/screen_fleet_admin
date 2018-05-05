@@ -16,39 +16,40 @@
 **.csproj
 
 # Build results
-ScreenFleetAdmin/[Dd]ebug/
-ScreenFleetAdmin/[Dd]ebugPublic/
-ScreenFleetAdmin/[Rr]elease/
-ScreenFleetAdmin/[Rr]eleases/
-ScreenFleetAdmin/x64/
-ScreenFleetAdmin/x86/
-ScreenFleetAdmin/bld/
-ScreenFleetAdmin/[Bb]in/
-ScreenFleetAdmin/[Oo]bj/
-ScreenFleetAdmin/[Ll]og/
+screen_fleet_admin/[Dd]ebug/
+screen_fleet_admin/[Dd]ebugPublic/
+screen_fleet_admin/[Rr]elease/
+screen_fleet_admin/[Rr]eleases/
+screen_fleet_admin/x64/
+screen_fleet_admin/x86/
+screen_fleet_admin/bld/
+screen_fleet_admin/[Bb]in/
+screen_fleet_admin/[Oo]bj/
+screen_fleet_admin/[Ll]og/
+screen_fleet_admin/mongod.cfg
 
 # Visual Studio 2015 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
-ScreenFleetAdmin/wwwroot/
+screen_fleet_admin/wwwroot/
 
 # MSTest test Results
-ScreenFleetAdmin/[Tt]est[Rr]esult*/
-ScreenFleetAdmin/[Bb]uild[Ll]og.*
+screen_fleet_admin/[Tt]est[Rr]esult*/
+screen_fleet_admin/[Bb]uild[Ll]og.*
 
 # NUNIT
 *.VisualState.xml
-ScreenFleetAdmin/TestResult.xml
+screen_fleet_admin/TestResult.xml
 
 # Build Results of an ATL Project
-ScreenFleetAdmin/[Dd]ebugPS/
-ScreenFleetAdmin/[Rr]eleasePS/
-ScreenFleetAdmin/dlldata.c
+screen_fleet_admin/[Dd]ebugPS/
+screen_fleet_admin/[Rr]eleasePS/
+screen_fleet_admin/dlldata.c
 
 # DNX
-ScreenFleetAdmin/project.lock.json
-ScreenFleetAdmin/project.fragment.lock.json
-ScreenFleetAdmin/artifacts/
+screen_fleet_admin/project.lock.json
+screen_fleet_admin/project.fragment.lock.json
+screen_fleet_admin/artifacts/
 
 *_i.c
 *_p.c
