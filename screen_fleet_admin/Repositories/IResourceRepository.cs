@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace screen_fleet_admin.Repositories
 {
-    interface IResourceRepository
+    public interface IResourceRepository
     {
         Task<IEnumerable<ResourceModel>> GetAllResources();
         Task<ResourceModel> GetSpecificResource(string id);
