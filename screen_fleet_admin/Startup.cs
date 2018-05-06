@@ -2,10 +2,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using screen_fleet_admin.Models;
 using screen_fleet_admin.Contexts;
+using screen_fleet_admin.Models;
 using screen_fleet_admin.Repositories;
-using screen_fleet_admin.Controllers;
 
 namespace screen_fleet_admin
 {
