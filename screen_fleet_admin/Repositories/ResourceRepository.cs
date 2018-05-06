@@ -10,6 +10,7 @@ namespace screen_fleet_admin.Repositories
     public class ResourceRepository : IResourceRepository
     {
         private readonly MongoContext<ResourceModel> _context = null;
+        private readonly static string COLLECTION_NAME = "RepositoryModel";
 
         public ResourceRepository(MongoContext<ResourceModel> context)
         {
@@ -18,20 +19,20 @@ namespace screen_fleet_admin.Repositories
 
         public async Task<IEnumerable<ResourceModel>> GetAllResources()
         {
-            return await _context.Collection.Find(_ => true).ToListAsync();
+            return await _context.Collection(COLLECTION_NAME).Find(_ => true).ToListAsync();
         }
 
         public async Task<ResourceModel> GetSpecificResource(string id)
         {
             ObjectId internalId = RepositoryUtils.GetInternalId(id);
-            return await _context.Collection.Find(
+            return await _context.Collection(COLLECTION_NAME).Find(
                 resource => resource.RawId == id || resource.Id == internalId
             ).FirstOrDefaultAsync();
         }
 
         public async Task<bool> RemoveSpecificResource(string id)
         {
-            DeleteResult actionResult = await _context.Collection.DeleteOneAsync(
+            DeleteResult actionResult = await _context.Collection(COLLECTION_NAME).DeleteOneAsync(
                 Builders<ResourceModel>.Filter.Eq("RawId", id)
             );
             return actionResult.IsAcknowledged && actionResult.DeletedCount > 0;
@@ -39,7 +40,7 @@ namespace screen_fleet_admin.Repositories
 
         public async Task<bool> UpdateResource(string id, ResourceModel newResource)
         {
-            ReplaceOneResult actionResult = await _context.Collection.ReplaceOneAsync(
+            ReplaceOneResult actionResult = await _context.Collection(COLLECTION_NAME).ReplaceOneAsync(
                 s => s.RawId == id,
                 newResource,
                 new UpdateOptions { IsUpsert = true }
@@ -49,7 +50,7 @@ namespace screen_fleet_admin.Repositories
 
         public async Task AddNewResource(ResourceModel resource)
         {
-            await _context.Collection.InsertOneAsync(resource);
+            await _context.Collection(COLLECTION_NAME).InsertOneAsync(resource);
         }
     }
 }
