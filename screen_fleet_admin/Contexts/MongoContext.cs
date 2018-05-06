@@ -12,12 +12,9 @@ namespace screen_fleet_admin.Contexts
             _database = databaseContext.Database;
         }
 
-        public IMongoCollection<Model> Collection
+        public IMongoCollection<Model> Collection(string collectionName)
         {
-            get
-            {
-                return _database.GetCollection<Model>("TVModels");
-            }
+            return _database.GetCollection<Model>(collectionName);
         }
     }
 }
