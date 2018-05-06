@@ -11,6 +11,7 @@ namespace screen_fleet_admin.Models
     {
         public ObjectId Id { get; set; }
 
+        [BsonElement("RawId")]
         public string RawId { get; set; }
 
         [BsonElement("Name")]
