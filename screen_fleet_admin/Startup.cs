@@ -44,14 +44,7 @@ namespace screen_fleet_admin
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc(routes => 
-            {
-                routes.MapRoute(
-                    name: "SystemConfig",
-                    template: "api/{controller}/tv",
-                    defaults: new { controller = "System", Action = "PostTv" }
-                );
-            });
+            app.UseMvc();
         }
     }
 }
