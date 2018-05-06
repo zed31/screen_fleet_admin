@@ -7,7 +7,6 @@ namespace screen_fleet_admin.Controllers
 {
     // Used only for developpment not for production, this scenario is ugly
     [Produces("application/json")]
-    [Route("api/[controller]")]
     public class SystemController : Controller
     {
         private readonly ITVRepository _tvRepository = null;
@@ -18,7 +17,7 @@ namespace screen_fleet_admin.Controllers
         }
 
         [HttpPost]
-        public string Post()
+        public string PostTv()
         {
             _tvRepository.AddTVScreen(new TVModel()
             {

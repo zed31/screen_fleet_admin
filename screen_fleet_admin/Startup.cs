@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using screen_fleet_admin.Models;
 using screen_fleet_admin.Contexts;
 using screen_fleet_admin.Repositories;
+using screen_fleet_admin.Controllers;
 
 namespace screen_fleet_admin
 {
@@ -28,6 +29,7 @@ namespace screen_fleet_admin
                 options.Collection = Configuration.GetSection("MongoConnection:Collection").Value;
             });
             services.AddTransient<ITVRepository, TVRepository>();
+            services.AddTransient<IResourceRepository, ResourceRepository>();
             services.AddTransient<MongoClientContext, MongoClientContext>();
             services.AddTransient<MongoContext<TVModel>, MongoContext<TVModel>>();
             services.AddTransient<MongoContext<DbModelBase>, MongoContext<DbModelBase>>();
@@ -43,7 +45,14 @@ namespace screen_fleet_admin
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes => 
+            {
+                routes.MapRoute(
+                    name: "SystemConfig",
+                    template: "api/{controller}/tv",
+                    defaults: new { controller = "System", Action = "PostTv" }
+                );
+            });
         }
     }
 }
