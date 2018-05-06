@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using screen_fleet_admin.Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
 using screen_fleet_admin.Models;
+using screen_fleet_admin.Repositories;
+using System;
 
 namespace screen_fleet_admin.Controllers.Stub
 {
@@ -84,7 +80,7 @@ namespace screen_fleet_admin.Controllers.Stub
                     BinaryData = null
                 }
             });
-            _repository.AddNewResource(new BinaryResourceModel()
+            _repository.AddNewResource(new ResourceModel()
             {
                 Name = "Third resource",
                 RawId = "3",
