@@ -7,5 +7,8 @@ namespace screen_fleet_admin.Models
     {
         [BsonElement("Ip address")]
         public string Ip { get; set; }
+
+        [BsonElement("Resource")]
+        public ResourceModel Resource { get; set; }
     }
 }

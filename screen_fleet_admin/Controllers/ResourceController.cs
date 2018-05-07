@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using screen_fleet_admin.Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
 using screen_fleet_admin.Models;
-using Newtonsoft.Json;
+using screen_fleet_admin.Repositories;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace screen_fleet_admin.Controllers
 {

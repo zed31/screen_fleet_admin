@@ -13,7 +13,7 @@ namespace screen_fleet_admin.Models
         [BsonElement("child2")]
         public ResourceModel Leaf2 { get; set; }
 
-        [BsonElement("rawdata")]
-        public byte[] BinaryData { get; set; }
+        [BsonElement("path")]
+        public string Path { get; set; }
     }
 }

@@ -8,16 +8,23 @@ using screen_fleet_admin.Repositories;
 
 namespace screen_fleet_admin
 {
+    /*! \brief Auto-generated class used upon the server start */
     public class Startup
     {
+        /*! \brief Constructor of the Startup class
+         * @param[in]   configuration   The configuration of the software
+         */
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /*! @return the server configuration */
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /*! \brief Function that configures the services of the server
+         * @param[in]   services    The service collection manager
+         */
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -32,11 +39,13 @@ namespace screen_fleet_admin
             services.AddTransient<MongoClientContext, MongoClientContext>();
             services.AddTransient<MongoContext<TVModel>, MongoContext<TVModel>>();
             services.AddTransient<MongoContext<DbModelBase>, MongoContext<DbModelBase>>();
-            services.AddTransient<MongoContext<CompositionModel>, MongoContext<CompositionModel>>();
             services.AddTransient<MongoContext<ResourceModel>, MongoContext<ResourceModel>>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /*! \brief Configure the application
+         * @param[in]   app the application builder
+         * @param[in]   env the environments host
+         */
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
