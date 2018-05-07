@@ -106,6 +106,7 @@ namespace screen_fleet_admin.Controllers
             {
                 Name = "First tv",
                 Ip = "192.168.1.1",
+                RawId = "1",
                 InsertionDate = DateTime.Now,
                 UpdateTime = DateTime.Now,
                 Resource = r1
@@ -114,6 +115,7 @@ namespace screen_fleet_admin.Controllers
             {
                 Name = "Second tv",
                 Ip = "192.168.1.2",
+                RawId = "2",
                 InsertionDate = DateTime.Now,
                 UpdateTime = DateTime.Now,
                 Resource = r2
@@ -122,6 +124,7 @@ namespace screen_fleet_admin.Controllers
             {
                 Name = "Third tv",
                 Ip = "192.168.1.3",
+                RawId = "3",
                 InsertionDate = DateTime.Now,
                 UpdateTime = DateTime.Now,
                 Resource = r3

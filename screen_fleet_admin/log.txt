@@ -1,0 +1,1 @@
+{"Ip":null,"Resource":null,"Id":{"Timestamp":0,"Machine":0,"Pid":0,"Increment":0,"CreationTime":"1970-01-01T00:00:00Z"},"RawId":"1","Name":null,"InsertionDate":"2018-05-07T23:05:08.4815569+02:00","UpdateTime":"2018-05-07T23:05:08.481561+02:00"}
