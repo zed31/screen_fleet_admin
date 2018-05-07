@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace screen_fleet_admin.Models
+﻿namespace screen_fleet_admin.Models
 {
+    /*! \brief Class used to handle the settings of the application */
     public class Settings
     {
         public string ConnectionString;

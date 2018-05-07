@@ -68,7 +68,8 @@ namespace screen_fleet_admin.Repositories
             return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
         }
 
-        /*! \brief 
+        /*! \brief Add a new resource to the resource collection
+         * @param[in]   resource    the resource added to the collection
          */
         public async Task AddNewResource(ResourceModel resource)
         {
