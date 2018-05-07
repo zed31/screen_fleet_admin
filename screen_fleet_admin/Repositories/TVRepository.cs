@@ -36,7 +36,10 @@ namespace screen_fleet_admin.Repositories
         public async Task<TVModel> GetTVScreen(string rawId)
         {
             ObjectId internalId = RepositoryUtils.GetInternalId(rawId);
-            return await _context.Collection(COLLECTION_NAME).Find(tv => tv.RawId == rawId || tv.Id == internalId).FirstOrDefaultAsync();
+            return await _context
+                .Collection(COLLECTION_NAME)
+                .Find(tv => tv.RawId == rawId || tv.Id == internalId)
+                .FirstOrDefaultAsync();
         }
 
         /*! \brief Add tv Model to the database
