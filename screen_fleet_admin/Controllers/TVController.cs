@@ -25,7 +25,7 @@ namespace screen_fleet_admin.Controllers
         /*! \brief Get all the tv available on the database
          * @return an asynchronous task containing a collection of TVModel
          */
-        [HttpGet]
+        [HttpGet("list")]
         public async Task<IEnumerable<TVModel>> Get()
         {
             return await _tvRepository.GetAllTVScreens();
@@ -35,7 +35,7 @@ namespace screen_fleet_admin.Controllers
          * @param[in]   rawId   The RawID of the specific tv
          * @return  an asynchronous task containing the TVModel related to the rawId
          */
-        [HttpGet("{rawId}")]
+        [HttpGet("list/{rawId}")]
         public async Task<TVModel> Get(string rawId)
         {
             return await _tvRepository.GetTVScreen(rawId);
@@ -49,6 +49,24 @@ namespace screen_fleet_admin.Controllers
         public async Task<bool> UpdateTv([FromBody] TVModel tvModel)
         {
             return await _tvRepository.UpdateTVScreenContent(tvModel.RawId, tvModel);
+        }
+
+        /*! \brief Add a TV screen to the database
+         * @param[in]   tvModel The model of a simple TV
+         * @return      an asynchronous task
+         */
+        [HttpPost("insert")]
+        public async Task CreateTv(TVModel tvModel)
+        {
+            await _tvRepository.AddTVScreen(new TVModel()
+            {
+                RawId = tvModel.RawId,
+                Ip = tvModel.Ip,
+                Name = tvModel.Name,
+                Resource = tvModel.Resource,
+                InsertionDate = tvModel.InsertionDate,
+                UpdateTime = tvModel.UpdateTime
+            });
         }
     }
 }
