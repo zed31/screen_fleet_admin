@@ -59,11 +59,17 @@ namespace screen_fleet_admin.Repositories
          */
         public async Task<bool> UpdateResource(string id, ResourceModel newResource)
         {
-            ReplaceOneResult actionResult = await _context.Collection(COLLECTION_NAME).ReplaceOneAsync(
-                s => s.RawId == id,
-                newResource,
-                new UpdateOptions { IsUpsert = true }
-            );
+            var filter = Builders<ResourceModel>.Filter.Eq("RawId", id);
+            var update = Builders<ResourceModel>.Update
+                .Set(s => s.Name, newResource.Name)
+                .Set(s => s.Leaf1, newResource.Leaf1)
+                .Set(s => s.Leaf2, newResource.Leaf2)
+                .Set(s => s.InsertionDate, newResource.InsertionDate)
+                .Set(s => s.ResourceType, newResource.ResourceType)
+                .Set(s => s.Path, newResource.Path)
+                .Set(s => s.UpdateTime, newResource.UpdateTime);
+
+            UpdateResult actionResult = await _context.Collection(COLLECTION_NAME).UpdateOneAsync(filter, update);
             return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
         }
 
