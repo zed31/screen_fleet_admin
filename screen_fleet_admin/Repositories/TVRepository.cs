@@ -38,7 +38,7 @@ namespace screen_fleet_admin.Repositories
             ObjectId internalId = RepositoryUtils.GetInternalId(rawId);
             return await _context
                 .Collection(COLLECTION_NAME)
-                .Find(tv => tv.RawId == rawId || tv.Id == internalId)
+                .Find(tv => tv.RawId == rawId)
                 .FirstOrDefaultAsync();
         }
 
@@ -75,6 +75,25 @@ namespace screen_fleet_admin.Repositories
                 tv,
                 new UpdateOptions { IsUpsert = true }
             );
+            return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
+        }
+
+        /*! \brief Modify the content of a TV screen by updating every resources in it
+         * @param[in]   rawId   the raw id of the TV screen
+         * @param[in]   tv      the model binding of the TV
+         * @return      an asynchronous task set to true if the modification has been taken into account, false otherwise
+         */
+        public async Task<bool> UpdateTVScreenContent(string rawId, TVModel tv)
+        {
+            var filter = Builders<TVModel>.Filter.Eq("RawId", rawId);
+            var update = Builders<TVModel>.Update
+                .Set(s => s.Name, tv.Name)
+                .Set(s => s.Resource, tv.Resource)
+                .Set(s => s.Ip, tv.Ip)
+                .Set(s => s.InsertionDate, tv.InsertionDate)
+                .Set(s => s.UpdateTime, tv.UpdateTime);
+
+            UpdateResult actionResult = await _context.Collection(COLLECTION_NAME).UpdateOneAsync(filter, update);
             return actionResult.IsAcknowledged && actionResult.ModifiedCount > 0;
         }
 

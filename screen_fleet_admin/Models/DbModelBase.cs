@@ -7,7 +7,7 @@ namespace screen_fleet_admin.Models
     /*! \brief Model base for each model */
     public class DbModelBase
     {
-        public ObjectId Id { get; set; }
+        ObjectId Id { get; set; }
 
         [BsonElement("RawId")]
         public string RawId { get; set; }

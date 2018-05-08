@@ -3,8 +3,6 @@ using screen_fleet_admin.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using screen_fleet_admin.Repositories;
-using System.IO;
-using System.Text;
 
 namespace screen_fleet_admin.Controllers
 {
@@ -47,14 +45,10 @@ namespace screen_fleet_admin.Controllers
          * @param[in]   rawId   The RawId of the TV screen
          * @param[in]   tvModel The TVModel retrieved from the request body
          */
-        [HttpPut("{rawId}")]
-        public async Task<bool> UpdateTv(string rawId, TVModel tvModel)
+        [HttpPatch("modify")]
+        public async Task<bool> UpdateTv([FromBody] TVModel tvModel)
         {
-            using (StreamWriter sw = new StreamWriter("log.txt", true))
-            {
-                sw.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(tvModel));
-            }
-            return await _tvRepository.UpdateTVScreen(rawId, tvModel);
+            return await _tvRepository.UpdateTVScreenContent(tvModel.RawId, tvModel);
         }
     }
 }

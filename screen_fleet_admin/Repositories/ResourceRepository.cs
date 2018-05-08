@@ -35,9 +35,8 @@ namespace screen_fleet_admin.Repositories
          */
         public async Task<ResourceModel> GetSpecificResource(string id)
         {
-            ObjectId internalId = RepositoryUtils.GetInternalId(id);
             return await _context.Collection(COLLECTION_NAME).Find(
-                resource => resource.RawId == id || resource.Id == internalId
+                resource => resource.RawId == id
             ).FirstOrDefaultAsync();
         }
 

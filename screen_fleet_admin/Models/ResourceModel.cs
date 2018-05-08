@@ -1,4 +1,6 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace screen_fleet_admin.Models
 {
@@ -6,18 +8,34 @@ namespace screen_fleet_admin.Models
      * code. A Resource is composed of a type (horizontal-split | vertical-split | data), leaf
      * to bind it to another model, path that contains a specific data
      */
-    public class ResourceModel : DbModelBase
+    public class ResourceModel
     {
-        [BsonElement("resourceType")]
+        [BsonElement("Id")]
+        public ObjectId Id { get; set; }
+
+        [BsonElement("RawId")]
+        public string RawId { get; set; }
+
+        [BsonElement("Name")]
+        public string Name { get; set; }
+
+        [BsonElement("ResourceType")]
         public string ResourceType { get; set; }
 
-        [BsonElement("child1")]
+        [BsonElement("Leaf1")]
         public ResourceModel Leaf1 { get; set; }
 
-        [BsonElement("child2")]
+        [BsonElement("Leaf2")]
         public ResourceModel Leaf2 { get; set; }
 
-        [BsonElement("path")]
+        [BsonElement("Path")]
         public string Path { get; set; }
+
+        [BsonElement("InsertionDate")]
+        public DateTime InsertionDate { get; set; } = DateTime.Now;
+
+        [BsonElement("UpdateTime")]
+        public DateTime UpdateTime { get; set; } = DateTime.Now;
+
     }
 }
