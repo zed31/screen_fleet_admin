@@ -56,7 +56,7 @@ namespace screen_fleet_admin.Controllers
          * @return      an asynchronous task
          */
         [HttpPost("insert")]
-        public async Task CreateTv(TVModel tvModel)
+        public async Task CreateTv([FromBody] TVModel tvModel)
         {
             await _tvRepository.AddTVScreen(new TVModel()
             {
@@ -67,6 +67,15 @@ namespace screen_fleet_admin.Controllers
                 InsertionDate = tvModel.InsertionDate,
                 UpdateTime = tvModel.UpdateTime
             });
+        }
+
+        /*! \brief Remove a tv screen related to the specific RawId
+         * @param[in]   
+         */
+        [HttpDelete("remove/{RawId}")]
+        public async Task<bool> DeleteTV(string rawId)
+        {
+            return await _tvRepository.RemoveTVScreen(rawId);
         }
     }
 }
