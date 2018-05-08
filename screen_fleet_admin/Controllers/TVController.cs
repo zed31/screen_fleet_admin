@@ -70,7 +70,8 @@ namespace screen_fleet_admin.Controllers
         }
 
         /*! \brief Remove a tv screen related to the specific RawId
-         * @param[in]   
+         * @param[in]   rawId   The raw id of the tv
+         * @return      an asynchronous task that is set to true if the deletion succeed, false otherwise
          */
         [HttpDelete("remove/{RawId}")]
         public async Task<bool> DeleteTV(string rawId)
