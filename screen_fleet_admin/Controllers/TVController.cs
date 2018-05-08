@@ -58,15 +58,7 @@ namespace screen_fleet_admin.Controllers
         [HttpPost("insert")]
         public async Task CreateTv([FromBody] TVModel tvModel)
         {
-            await _tvRepository.AddTVScreen(new TVModel()
-            {
-                RawId = tvModel.RawId,
-                Ip = tvModel.Ip,
-                Name = tvModel.Name,
-                Resource = tvModel.Resource,
-                InsertionDate = tvModel.InsertionDate,
-                UpdateTime = tvModel.UpdateTime
-            });
+            await _tvRepository.AddTVScreen(RepositoryUtils.GenerateNewModel(tvModel));
         }
 
         /*! \brief Remove a tv screen related to the specific RawId
