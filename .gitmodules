@@ -1,0 +1,3 @@
+[submodule "screen-fleet-admin-front"]
+	path = screen-fleet-admin-front
+	url = git@github.com:zed31/screen-fleet-admin-front.git
